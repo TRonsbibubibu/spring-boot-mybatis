@@ -1,5 +1,6 @@
 package com.trons.controller;
 
+import com.trons.Error.TestError;
 import com.trons.model.User;
 import com.trons.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/userinfo")
-    public User getUserInfo(@RequestParam(name = "id")int id){
+    public User getUserInfo(@RequestParam(name = "id")int id) throws TestError {
         User user = userService.getUserInfo(id);
         return user;
     }
