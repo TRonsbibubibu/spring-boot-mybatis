@@ -1,9 +1,16 @@
 package com.trons.model;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by trons on 16-4-17.
  */
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class User {
+
     private String name;
     private Integer age;
     private String password;
