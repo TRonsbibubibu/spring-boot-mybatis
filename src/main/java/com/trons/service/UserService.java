@@ -2,7 +2,7 @@ package com.trons.service;
 
 import com.trons.Error.TestError;
 import com.trons.mapper.UserMapper;
-import com.trons.model.User;
+import com.trons.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class UserService {
 //        return user;
     }
 
-    public User[] getAllUser(){
+    public User[] getAllUser() {
         return userMapper.getAllUser();
     }
 }

@@ -1,4 +1,4 @@
-package com.trons.model;
+package com.trons.entity;
 
 import org.springframework.http.HttpStatus;
 

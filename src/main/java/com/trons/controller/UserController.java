@@ -1,8 +1,10 @@
 package com.trons.controller;
 
 import com.trons.Error.TestError;
-import com.trons.model.User;
+import com.trons.entity.User;
 import com.trons.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +21,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    final static Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @ResponseBody
     @RequestMapping("/userinfo")
     public User getUserInfo(@RequestParam(name = "id")int id) throws TestError {
@@ -28,7 +32,9 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/alluser")
-    public User[] getAllUser(){
-        return userService.getAllUser();
+    public String getAllUser() throws TestError {
+//        return userService.getAllUser();
+        logger.warn("我好似电话粉丝电话");
+        throw new TestError("dddddd");
     }
 }

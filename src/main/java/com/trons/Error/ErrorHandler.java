@@ -1,7 +1,7 @@
 package com.trons.Error;
 
-import com.trons.model.Response;
-import com.trons.model.User;
+import com.trons.entity.Response;
+import com.trons.entity.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class ErrorHandler {
 
-    @ExceptionHandler(TestError.class)
+    @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ResponseBody
     User handle(TestError error){

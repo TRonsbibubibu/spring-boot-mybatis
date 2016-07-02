@@ -13,6 +13,9 @@ import org.springframework.context.annotation.Configuration;
 @AutoConfigureAfter(MyBatisConfig.class)
 public class MyBatisMapperScannerConfig {
     public MapperScannerConfigurer mapperScannerConfigurer(){
+        /**
+         * 自动扫描接口文件，和mapper配置文件对应
+         */
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
         mapperScannerConfigurer.setBasePackage("com.trons.mapper");

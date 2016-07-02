@@ -3,11 +3,11 @@
 
 
 <mapper namespace="com.trons.mapper.UserMapper">
-    <select id="findUserInfo" resultType="com.trons.model.User">
+    <select id="findUserInfo" resultType="com.trons.entity.User">
         select name, age,password from user where id = #{id};
     </select>
 
-    <select id="getAllUser" resultType="com.trons.model.User">
+    <select id="getAllUser" resultType="com.trons.entity.User">
         select name, age,password from user;
     </select>
 </mapper>
