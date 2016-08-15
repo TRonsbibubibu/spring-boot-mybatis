@@ -50,7 +50,7 @@
     <!-- Enable FILE and STDOUT appenders for all logs messages.
          By default, only logs at level INFO and above. -->
     <root level="INFO">
-        <appender-ref ref="FILE" />
+        <!--<appender-ref ref="FILE" />-->
         <appender-ref ref="STDOUT" />
     </root>
 
@@ -58,4 +58,7 @@
     <logger name="pedestal" level="ALL" />
     <logger name="hammock-cafe" level="ALL" />
     <logger name="user" level="ALL" />
+
+    <!--打印sql语句-->
+    <logger name="com.ickkey.nokey.mapper" level="DEBUG"/>
 </configuration>

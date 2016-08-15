@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.trons.mapper.TokenMapper">
+    <select id="getTokenByUserId" resultType="com.trons.entity.Token">
+        SELECT * FROM token WHERE id = #{id} and isAdmin = #{isAdmin} and client = #{client};
+    </select>
+
+    <select id="getTokenByToken" resultType="com.trons.entity.Token">
+        SELECT * FROM token WHERE token = #{token};
+    </select>
+
+    <select id="updateToken">
+        UPDATE token
+          SET token = #{token}, update_at = #{updateAt}
+          WHERE id = #{id} and isAdmin = #{isAdmin} and client = #{client};
+    </select>
+
+    <insert id="addToken" parameterType="com.trons.entity.Token">
+        INSERT INTO token (id, isAdmin, token, client, create_at, update_at,expires_at)
+          VALUES (#{id}, #{isAdmin},#{token}, #{client},#{createAt},#{updateAt},#{expiresAt})
+    </insert>
+
+    <delete id="deleteToken">
+        DELETE FROM token WHERE users_id = #{userId} and #{isAdmin}
+    </delete>
+</mapper>

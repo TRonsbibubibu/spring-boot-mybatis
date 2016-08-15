@@ -3,11 +3,15 @@
 
 
 <mapper namespace="com.trons.mapper.UserMapper">
-    <select id="findUserInfo" resultType="com.trons.entity.User">
-        select name, age,password from user where id = #{id};
+    <select id="get" resultType="com.trons.entity.User">
+        SELECT * FROM users WHERE id = #{id};
     </select>
 
-    <select id="getAllUser" resultType="com.trons.entity.User">
-        select name, age,password from user;
+    <select id="getByMobile" resultType="com.trons.entity.User">
+        SELECT * FROM users WHERE mobile = #{mobile};
+    </select>
+
+    <select id="getByStuCode" resultType="com.trons.entity.User">
+        SELECT * FROM users WHERE stu_code = #{stuCode};
     </select>
 </mapper>

@@ -1,14 +1,18 @@
 package com.trons.mapper;
 
+
 import com.trons.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * Created by trons on 16-4-17.
  */
-public interface UserMapper{
-    public User findUserInfo(int id);
+public interface UserMapper {
+    User get(@Param("id") long id);
 
-    public User[] getAllUser();
+    User getByMobile(@Param("mobile") String mobile);
 
-    public User[] getUserById(int id);
+    User getByStuCode(@Param("stuCode") String stuCode);
+
+    int update(@Param("user") User user);
 }
